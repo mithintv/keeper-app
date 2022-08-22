@@ -10,12 +10,15 @@ html {
 
 body {
   background: #eee;
-  padding: 0 16px;
+  padding: 0;
+  margin: 0 auto;
+  height: 100vh;
 }
 
 header {
   background-color: #f5ba13;
-  margin: auto -16px;
+  width: 100%;
+  margin: 0 auto;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
@@ -27,48 +30,84 @@ header h1 {
 }
 
 footer {
-  position: absolute;
-  text-align: center;
-  bottom: 0;
+  display: flex;
   width: 100%;
+  text-align: center;
   height: 2.5rem;
+  margin: auto 0 0 0;
+  justify-content: center;
+  align-items: center;
 }
 
 footer p {
   color: #ccc;
+  padding: 1rem 0;
+}
+
+.keeper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.notes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .note {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 1;
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
-  padding: 10px;
-  width: 240px;
+  padding: 1.25rem 1.25rem 1rem;
+  width: 300px;
+  height: max-content;
   margin: 16px;
   float: left;
 }
 
 .note h1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   font-size: 1.1em;
   margin-bottom: 6px;
+  word-wrap: normal;
 }
 
-.note p {
-  font-size: 1.1em;
+.note textarea {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  border: none;
+  resize: none;
+  outline: none;
+  font-family: inherit;
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .note button {
-  position: relative;
-  float: right;
-  margin-right: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   color: #f5ba13;
   background-color: #fff;
   border: none;
-  width: 60px;
-  height: 36px;
   cursor: pointer;
   outline: none;
 }
@@ -89,13 +128,15 @@ form textarea {
   border: none;
   padding: 4px;
   outline: none;
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: inherit;
   resize: none;
 }
 
 form button {
-  font-size: 1rem;
+  line-height: 2.4rem;
+  font-size: 2rem;
+  padding: 0;
   position: absolute;
   right: 18px;
   bottom: -18px;
