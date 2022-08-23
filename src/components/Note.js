@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
+
+import useTextAreaResize from '../hooks/useTextAreaResize';
 
 
 function Note(props) {
@@ -8,13 +10,8 @@ function Note(props) {
   const headerRef = useRef(null);
   const textAreaRef = useRef(null);
 
-  useEffect(() => {
-    if (textAreaRef.current) {
-      textAreaRef.current.style.height = '0px';
-      const scrollHeight = textAreaRef.current.scrollHeight;
-      textAreaRef.current.style.height = scrollHeight + 25 + "px";
-    }
-  }, [textAreaRef, content]);
+  useTextAreaResize(headerRef, title, 12);
+  useTextAreaResize(textAreaRef, content, 25);
 
   const updateTitle = event => {
     setTitle(event.target.value);
@@ -30,12 +27,14 @@ function Note(props) {
 
   return (
     <div className="note">
-      <div>
-        <input
+      <div className='noteBody'>
+        <textarea
+          className='noteTitle'
           ref={headerRef}
           onChange={updateTitle}
           placeholder='Untitled'
           value={title}
+          rows={1}
         />
         <textarea
           className="noteContent"
@@ -45,7 +44,7 @@ function Note(props) {
           value={content}
         />
       </div>
-      <div className="button">
+      <div className="buttonWrapper">
         <button onClick={onDelete}><span className="material-symbols-outlined">
           delete
         </span></button>
