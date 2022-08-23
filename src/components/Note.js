@@ -12,7 +12,7 @@ function Note(props) {
     if (textAreaRef.current) {
       textAreaRef.current.style.height = '0px';
       const scrollHeight = textAreaRef.current.scrollHeight;
-      textAreaRef.current.style.height = scrollHeight + 35 + "px";
+      textAreaRef.current.style.height = scrollHeight + 25 + "px";
     }
   }, [textAreaRef, content]);
 
@@ -34,10 +34,11 @@ function Note(props) {
         <input
           ref={headerRef}
           onChange={updateTitle}
-          placeholder='Title'
+          placeholder='Untitled'
           value={title}
         />
         <textarea
+          className="noteContent"
           ref={textAreaRef}
           onChange={updateNote}
           placeholder='Empty Note'

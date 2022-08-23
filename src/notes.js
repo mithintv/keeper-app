@@ -3,19 +3,19 @@ const notes = [
     key: 1,
     title: "Delegation",
     content:
-      "Q. How many programmers does it take to change a light bulb?\n\nA. None – It’s a hardware problem"
+      "How many programmers does it take to change a light bulb?\n\nNone – It’s a hardware problem"
   },
   {
     key: 2,
     title: "Loops",
     content:
-      "How to keep a programmer in the shower forever.\n\nShow him the shampoo bottle instructions: Lather. Rinse. Repeat."
+      "How do you keep a programmer in the shower forever?\n\nShow them the shampoo bottle instructions:\nLather. Rinse. Repeat."
   },
   {
     key: 3,
     title: "Arrays",
     content:
-      "Q. Why did the programmer quit his job?\n\nA. Because he didn't get arrays."
+      "Why did the programmer quit his job?\n\nBecause he didn't get arrays."
   },
   {
     key: 4,

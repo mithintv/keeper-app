@@ -12,7 +12,6 @@ body {
   background: #eee;
   padding: 0;
   margin: 0 auto;
-  height: 100vh;
 }
 
 header {
@@ -47,75 +46,18 @@ footer p {
 .keeper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 99vh;
 }
 
-.notes {
+.form {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.note {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 2px 5px #ccc;
-  padding: 1.25rem 1.25rem 1rem;
-  width: 300px;
-  height: max-content;
-  margin: 16px;
-  float: left;
-}
-
-.note input {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  font-size: 1.1em;
-  font-weight: 600;
-  font-family: inherit;
-  border: none;
-  outline: none;
-  margin-bottom: 6px;
-  word-wrap: normal;
-}
-
-.note textarea {
-  flex-shrink: 1;
-  height: max-content;
-  width: 100%;
-  font-size: 0.95rem;
-  border: none;
-  resize: none;
-  outline: none;
-  font-family: inherit;
-  word-wrap: break-word;
-}
-
-.button {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.note button {
-  display: flex;
-  align-items: flex-end;
   justify-content: center;
-  color: #f5ba13;
-  background-color: #fff;
-  border: none;
-  cursor: pointer;
-  outline: none;
 }
 
 form {
   position: relative;
   width: 480px;
-  margin: 30px auto 20px auto;
+  margin: 30px 1rem 20px;
   background: #fff;
   padding: 15px;
   border-radius: 7px;
@@ -149,4 +91,89 @@ form button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+}
+
+.notes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 1.25rem 1.25rem 1rem;
+  height: max-content;
+  margin: 1rem;
+  float: left;
+}
+
+.note input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1.1em;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  margin-bottom: 0.65rem;
+  word-wrap: normal;
+}
+
+.note textarea {
+  height: max-content;
+  width: 245px;
+  font-size: 0.95rem;
+  border: none;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+  word-wrap: break-word;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.note button {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: #f5ba13;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+@media (max-width: 1024px) {
+  .notes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .notes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .notes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
