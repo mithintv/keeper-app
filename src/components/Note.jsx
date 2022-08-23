@@ -3,20 +3,26 @@ import React, { useState, useEffect, useRef } from 'react';
 
 function Note(props) {
 
-  const textAreaRef = useRef();
+  const [title, setTitle] = useState(props.title);
   const [content, setContent] = useState(props.content);
-
-  const updateNote = event => {
-    setContent(event.target.value);
-  };
+  const headerRef = useRef(null);
+  const textAreaRef = useRef(null);
 
   useEffect(() => {
     if (textAreaRef.current) {
       textAreaRef.current.style.height = '0px';
       const scrollHeight = textAreaRef.current.scrollHeight;
-      textAreaRef.current.style.height = scrollHeight + 1 + "px";
+      textAreaRef.current.style.height = scrollHeight + 35 + "px";
     }
-  }, [content]);
+  }, [textAreaRef, content]);
+
+  const updateTitle = event => {
+    setTitle(event.target.value);
+  };
+
+  const updateNote = event => {
+    setContent(event.target.value);
+  };
 
   const onDelete = () => {
     props.deleteNote(props.id);
@@ -25,11 +31,16 @@ function Note(props) {
   return (
     <div className="note">
       <div>
-        <h1>{props.title}</h1>
+        <input
+          ref={headerRef}
+          onChange={updateTitle}
+          placeholder='Title'
+          value={title}
+        />
         <textarea
           ref={textAreaRef}
-          rows={1}
           onChange={updateNote}
+          placeholder='Empty Note'
           value={content}
         />
       </div>
